@@ -1,0 +1,101 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="340" Padding="10,0"
+        ResizeMode="NoResize" Background="Black">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="7"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="#ebebeb"/>
+            <EventSetter Event="Click" Handler="Number"/>
+            <EventSetter Event="Click" Handler="Operations"/>
+        </Style>
+        <Style TargetType="Viewbox">
+            <Setter Property="Margin" Value="0,6"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Viewbox Grid.Row="1">
+            <Button x:Name="btnAC" Content="AC" Width="18" Height="15" Background="#FFA5A5A5" Foreground="#FF020202"/>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1">
+            <Button x:Name="btnNegative" Content="+/-" Width="18" Height="15" Background="#FFA5A5A5" Foreground="#FF020202"/>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="2">
+            <Button x:Name="btnPer" Content="%" Width="18" Height="15" Background="#FFA5A5A5" Foreground="#FF020202"/>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="3">
+            <Button x:Name="btnDiv" Content="/" Width="18" Height="15" Background="#FFFE9505"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2">
+            <Button x:Name="btn7" Content="7" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="1">
+            <Button x:Name="btn8" Content="8" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="2">
+            <Button x:Name="btn9" Content="9" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="3">
+            <Button x:Name="btnMul" Content="*" Width="18" Height="15" Background="#FFFE9505"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3">
+            <Button x:Name="btn4" Content="4" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="1">
+            <Button x:Name="btn5" Content="5" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="2">
+            <Button x:Name="btn6" Content="6" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="3">
+            <Button x:Name="btnMin" Content="-" Width="18" Height="15" Background="#FFFE9505"/>
+        </Viewbox>
+        <Viewbox Grid.Row="4">
+            <Button x:Name="btn1" Content="1" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="4" Grid.Column="1">
+            <Button x:Name="btn2" Content="2" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="4" Grid.Column="2">
+            <Button x:Name="btn3" Content="3" Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="4" Grid.Column="3">
+            <Button x:Name="btnPlus" Content="+" Width="18" Height="15" Background="#FFFE9505"/>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.ColumnSpan="2">
+            <Button x:Name="btn0" Content="0" Grid.Row="1" Grid.Column="1" Width="38" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.Column="2">
+            <Button x:Name="btnDot" Content="." Width="18" Height="15"/>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.Column="3">
+            <Button x:Name="btnEqual" Content="=" Width="18" Height="15" Click="btnEqual_Click" Background="#FFFE9505"/>
+        </Viewbox>
+        <Viewbox Grid.ColumnSpan="4" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Label x:Name="result" Content="" Padding="5,5,0,0" Foreground="White"/>
+        </Viewbox>
+    </Grid>
+</Window>
